@@ -112,7 +112,7 @@ zend_module_entry rdtsc_module_entry = {
   NULL,
   NULL,
   PHP_MINFO(rdtsc),
-  "1.0",
+  "0.1",
   STANDARD_MODULE_PROPERTIES
 };
 

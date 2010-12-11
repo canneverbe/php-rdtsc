@@ -1,1 +1,33 @@
-## A simple PHP extension to read the processor Time Stamp Counter
+### A simple PHP extension to read the processor Time Stamp Counter.
+
+Requirements:
+
+- GCC 
+- Linux
+- PHP 5.2
+
+### Installation
+
+# git clone git://github.com/canneverbe/php-rdtsc.git
+# cd php-rdtsc
+# phpize
+# ./configure 
+# make
+# make install
+
+### API 
+
+
+Currently there is only one class with one static method, its prototype is:
+
+mixed public static Rdtsc::getticks(void)
+
+Returns the current processor timestamp
+
+Return values:
+
+An integer if value is less than LONG_MAX in your platform.
+
+An string otherwise.
+
+
