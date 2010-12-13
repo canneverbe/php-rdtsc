@@ -4,7 +4,8 @@ PHP_ARG_ENABLE(rdtsc, [whether to enable rdtsc support],
 if test "$PHP_RDTSC" = "yes"; then
   PHP_NEW_EXTENSION(rdtsc, php_rdtsc.c,$ext_shared,,$P2C_CFLAGS)
 fi
-
+AC_USE_SYSTEM_EXTENSIONS
+AC_PROG_CC_STDC
 AC_C_INLINE
 AC_HEADER_TIME
 
