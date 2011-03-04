@@ -96,7 +96,7 @@ PHP_MINFO_FUNCTION(rdtsc)
 {
   php_info_print_table_start();
   php_info_print_table_header(2, "rdtsc", "enabled");
-  php_info_print_table_row(2, "Version", "1.0");
+  php_info_print_table_row(2, "Version", "0.1");
   php_info_print_table_end();
 }
 
