@@ -35,13 +35,6 @@
 /* {{{ Class entry pointers */
 PHPAPI zend_class_entry *rdtsc_Rdtsc_ptr;
 
-static zend_class_entry* _find_class(char* name TSRMLS_DC)
-{
-  zend_class_entry **pce = NULL;
-  zend_lookup_class(name, strlen(name), &pce TSRMLS_CC);
-  return pce ? *pce : NULL;
-}
-
 /* }}} */
 /* {{{ Methods for class Rdtsc */
 
@@ -49,9 +42,10 @@ static zend_class_entry* _find_class(char* name TSRMLS_DC)
 ZEND_METHOD(Rdtsc, getticks)
 {
   if (zend_parse_parameters_none() == FAILURE) {
-    return;
+      return;
   }
-        RDTSC_RETURN_LONG_LONG(getticks());
+
+  RDTSC_RETURN_LONG_LONG(getticks());
 }
 
 /* }}} */
@@ -80,8 +74,7 @@ static zend_function_entry rdtsc_functions[] = {
 
 PHP_MINIT_FUNCTION(rdtsc)
 {
-  zend_class_entry _ce, *_if;
-  zval* _val;
+  zend_class_entry _ce;
   
   INIT_CLASS_ENTRY(_ce, "Rdtsc", rdtsc_Rdtsc_functions);
   rdtsc_Rdtsc_ptr = zend_register_internal_class(&_ce TSRMLS_CC);
