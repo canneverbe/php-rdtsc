@@ -38,8 +38,8 @@ PHPAPI zend_class_entry *rdtsc_Rdtsc_ptr;
 /* }}} */
 /* {{{ Methods for class Rdtsc */
 
-// public static function getticks()
-ZEND_METHOD(Rdtsc, getticks)
+// public static function ticks()
+ZEND_METHOD(Rdtsc, ticks)
 {
   if (zend_parse_parameters_none() == FAILURE) {
       return;
@@ -54,11 +54,11 @@ ZEND_METHOD(Rdtsc, getticks)
 /* }}} */
 /* {{{ Method tables for classes */
 
-ZEND_BEGIN_ARG_INFO_EX(arginfo_rdtsc_Rdtsc_getticks, 0, 0, 0)
+ZEND_BEGIN_ARG_INFO_EX(arginfo_rdtsc_Rdtsc_ticks, 0, 0, 0)
 ZEND_END_ARG_INFO()
 
 static zend_function_entry rdtsc_Rdtsc_functions[] = {
-  ZEND_ME(Rdtsc,               getticks,                      arginfo_rdtsc_Rdtsc_getticks,                      ZEND_ACC_STATIC|ZEND_ACC_PUBLIC)
+  ZEND_ME(Rdtsc,               ticks,                      arginfo_rdtsc_Rdtsc_ticks,                      ZEND_ACC_STATIC|ZEND_ACC_PUBLIC)
   {NULL, NULL, NULL}
 };
 
