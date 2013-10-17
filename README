@@ -18,7 +18,7 @@ Requirements:
 
 Currently there is only one class with one static method, its prototype is:
 
-mixed public static Rdtsc::getticks(void)
+mixed public static Rdtsc::ticks(void)
 
 Returns the current processor timestamp
 
